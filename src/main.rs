@@ -1,7 +1,7 @@
-mod presentation;
-mod infrastructure;
-mod domain;
 mod application;
+mod domain;
+mod infrastructure;
+mod presentation;
 
 use oqs::*;
 
@@ -19,6 +19,6 @@ fn main() -> Result<()> {
 
     let signature = sigalg.sign(kem_pk.as_ref(), &a_sig_sk)?;
     sigalg.verify(kem_pk.as_ref(), &signature, &a_sig_pk)?;
-    
+
     Ok(())
 }
